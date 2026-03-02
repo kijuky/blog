@@ -50,7 +50,7 @@ $ cat japan.json | json-to-js > japan.js
 
 # GASでHTMLを用意する
 
-Google Drive を開き、Google Apps Script を新規作成します。
+Google Drive を開き、Google Apps Script を新規作成します。  
 ![image.png](./img/01.png)
 
 下記３つのファイルを追加します。
@@ -108,10 +108,10 @@ function doGet() {
 
 # ウェブに公開する
 
-公開 > ウェブアプリケーションとして導入... をクリック
+公開 > ウェブアプリケーションとして導入... をクリック  
 ![image.png](./img/02.png)
 
-アクセスを全員にして、公開/更新をクリック。
+アクセスを全員にして、公開/更新をクリック。  
 ![image.png](./img/03.png)
 
 
