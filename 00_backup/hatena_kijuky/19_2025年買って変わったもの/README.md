@@ -6,7 +6,7 @@ https://kijuky.hatenablog.com/entry/2026/01/31/192126
 
 ## 壁面収納
 
-[https://www.dinos.co.jp/furniture_s/simulation/:embed:cite]
+https://www.dinos.co.jp/furniture_s/simulation/
 
 dinosの壁面収納を買った。壁面収納とは、壁一面に収納を増やす家具の事だ。カラーボックスを並べるのとは異なり、前面は蓋がついておりぱっと見は壁のように機能する。壁面収納の奥行き分だけ部屋が狭くなる、模様替えがほぼ不可能というデメリットがあるが、部屋の壁に「収納」という機能を付与できるメリットがある。特にウチの場合、屋内収納が無いので、収納力を増やすことができる家具は貴重な存在になる。
 

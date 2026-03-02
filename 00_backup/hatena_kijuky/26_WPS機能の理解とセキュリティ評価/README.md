@@ -7,7 +7,7 @@ https://kijuky.hatenablog.com/entry/2026/02/20/224715
 - 無線LANルーターのWPS機能が何か知りたい
 - 利用する必要性やセキュリティリスクを評価したい
 
-[https://www.tp-link.com/jp/support/faq/2656/:embed:cite]
+https://www.tp-link.com/jp/support/faq/2656/
 
 # 発生した課題
 

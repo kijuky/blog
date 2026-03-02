@@ -6,7 +6,7 @@ https://kijuky.hatenablog.com/entry/2026/02/20/221843
 
 - 家庭内LANでIPv6を使用せず、全機器をIPv4で統一した運用にする。
 
-[https://mono96.jp/web/45596/:embed:cite]
+https://mono96.jp/web/45596/
 
 # 発生した課題
 

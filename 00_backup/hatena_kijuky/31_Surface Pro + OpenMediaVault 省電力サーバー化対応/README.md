@@ -80,5 +80,5 @@ Linuxには以下の電源状態がある：
 
 ## 参考
 
-[https://nisshingeppo.com/ai/ubuntu-nonsleep/:embed:cite]
+https://nisshingeppo.com/ai/ubuntu-nonsleep/
 

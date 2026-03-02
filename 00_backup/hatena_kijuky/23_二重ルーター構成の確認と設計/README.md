@@ -6,7 +6,7 @@ https://kijuky.hatenablog.com/entry/2026/02/20/221300
 
 - [NSD-G1000T](https://www.nuro.jp/pdf/device/manual_NSD-G1000T.pdf)と[AXE5400](https://www.tp-link.com/jp/home-networking/wifi-router/archer-axe5400/)を二重ルーター構成で運用し、Wi-Fi安定性を確保しつつ、IPアドレスやDHCP範囲を整理して、将来的に[UDR7](https://jp.store.ui.com/jp/ja/products/udr7)導入も考慮したネットワーク設計を行う。
 
-[https://internet.watch.impress.co.jp/docs/review/2081890.html:embed:cite]
+https://internet.watch.impress.co.jp/docs/review/2081890.html
 
 # 発生した課題
 

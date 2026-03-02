@@ -4,7 +4,7 @@ https://kijuky.hatenablog.com/entry/2022/04/28/105127
 
 みたいな記事を書いた。
 
-[https://qiita.com/kijuky/items/ab3d1aecc9e4466145f9:embed:cite]
+https://qiita.com/kijuky/items/ab3d1aecc9e4466145f9
 
 もともと[パーサーコンビネーターがサクッとネイティブ化できた](https://qiita.com/kijuky/items/21be8d13a89a4b835ad4#%E3%83%8D%E3%82%A4%E3%83%86%E3%82%A3%E3%83%96%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%82%92%E4%BD%9C%E3%82%8B)ので、最近だとネイティブサポートアツいのかな？と思って、軽い気持ちでPlayに挑戦したら丸２日かかった。ただ、[公式ドキュメントが日本語で参照できる](https://docs.oracle.com/cd/F44923_01/enterprise/21/docs/reference-manual/native-image/)ので、日本人にとってはとてもやりやすい環境だなと思った。
 
@@ -14,6 +14,6 @@ https://kijuky.hatenablog.com/entry/2022/04/28/105127
 
 いずれにせよ、reflect-config.json が解決すれば、Play ってネイティブ化できるんですよね。その熱が冷めないうちに本家に discussion 立てちゃいました。
 
-[https://github.com/playframework/playframework/discussions/11253:embed:cite]
+https://github.com/playframework/playframework/discussions/11253
 
 本格的に対応するとなると、もっとちゃんと reflect-config.json を整理する必要があるとは思うけど...

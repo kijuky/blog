@@ -37,5 +37,5 @@ https://kijuky.hatenablog.com/entry/2026/02/22/173959
 
 ## 参考
 
-[https://support.apple.com/en-us/102766:embed:cite]
+https://support.apple.com/en-us/102766
 

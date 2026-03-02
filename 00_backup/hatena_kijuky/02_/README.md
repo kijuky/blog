@@ -8,16 +8,16 @@ https://kijuky.hatenablog.com/entry/2021/06/08/223540
 
 質問箱1つ目　例外、Either、その他の使い分けは？
 
-[https://peing.net/ja/q/d34a1acb-55c4-4abd-9805-ae9c8268f0ae:embed:cite]
+https://peing.net/ja/q/d34a1acb-55c4-4abd-9805-ae9c8268f0ae
 
 質問箱2つ目　Javaとの優位性は？　途中で Kotlin の比較も追加された。
 
-[https://peing.net/ja/q/18181f38-7084-4398-9147-58a6b4b77a89:embed:cite]
+https://peing.net/ja/q/18181f38-7084-4398-9147-58a6b4b77a89
 
 
 モブプロでは Scala 3 のマクロについて、解説ページを読んだあとに、実際に手を動かしていた。
 
-[https://softwaremill.com/scala-3-macros-tips-and-tricks/:embed:cite]
+https://softwaremill.com/scala-3-macros-tips-and-tricks/
 
 `inline` の挙動についてコンパイルできるかどうかを確認していた。
 
@@ -64,9 +64,9 @@ inline def power(v: Int, p: Int): Int = {
 
 `inline` に関する公式ドキュメント
 
-[https://docs.scala-lang.org/scala3/guides/macros/inline.html:embed:cite]
+https://docs.scala-lang.org/scala3/guides/macros/inline.html
 
 型クラスに関する公式ドキュメント
 
-[https://dotty.epfl.ch/docs/reference/contextual/derivation.html:embed:cite]
+https://dotty.epfl.ch/docs/reference/contextual/derivation.html
 
