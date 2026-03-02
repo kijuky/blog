@@ -1,0 +1,1 @@
+https://kijuky.blogspot.com/
