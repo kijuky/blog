@@ -21,7 +21,7 @@ https://www.m3tech.blog/entry/2022/12/29/180000
 ![01.png](./img/01.png)  
 実際に運用している休暇予定シート
 
-[https://docs.google.com/spreadsheets/d/1Mjvm0KGu8vbMHDRGUtrsVhhAl9CrPWGpSnL1mb7fi-o/edit#gid=0:title]
+https://docs.google.com/spreadsheets/d/1Mjvm0KGu8vbMHDRGUtrsVhhAl9CrPWGpSnL1mb7fi-o/edit#gid=0
 
 ※Googleアカウントでアクセスすると「コピーを作成」でコピーできます。
 
