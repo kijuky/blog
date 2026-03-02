@@ -31,14 +31,13 @@ env | grep DISPLAY
 
 Dockerファイルを用意します ~~（そのうちどこかにホストしようと思います）~~。
 
-:::note info
-[追記] GitHub Packages にアップロードしました。下記でpullできます。
-https://github.com/kijuky/docker-openhsp-linux/pkgs/container/hsp
-```shell
-docker pull ghcr.io/kijuky/hsp:3.6
-```
-:::
-
+> **Note:**  
+> [追記] GitHub Packages にアップロードしました。下記でpullできます。
+> https://github.com/kijuky/docker-openhsp-linux/pkgs/container/hsp
+>
+> ```shell
+> docker pull ghcr.io/kijuky/hsp:3.6
+> ```
 
 ```Dockerfile:Dockerfile
 FROM ubuntu:22.04

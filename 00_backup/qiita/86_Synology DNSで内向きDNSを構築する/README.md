@@ -2,14 +2,12 @@ https://qiita.com/kijuky/items/d39ae691725ad4e93f0c
 
 ---
 
-:::note info
-**これで何ができるか**
-家庭内LANにおいて、名前でパソコンにアクセスできます。
-:::
+> **Note:**
+> **これで何ができるか**  
+> 家庭内LANにおいて、名前でパソコンにアクセスできます。
 
-:::note warn
-DNSはIPアドレスまでしかマッピングしないので、ポート番号も含めてマッピングしたい場合はリバースプロキシの導入を検討してください。なお、[SynologyDSMはリバースプロキシを搭載済み](https://kb.synology.com/ja-jp/DSM/help/DSM/AdminCenter/system_login_portal_advanced?version=7)ですので、家庭内のDNSは一旦全てSynologyで受けてから、リバースプロキシでサービスに飛ばすようにすると良いです。
-:::
+> **Note:**  
+> DNSはIPアドレスまでしかマッピングしないので、ポート番号も含めてマッピングしたい場合はリバースプロキシの導入を検討してください。なお、[SynologyDSMはリバースプロキシを搭載済み](https://kb.synology.com/ja-jp/DSM/help/DSM/AdminCenter/system_login_portal_advanced?version=7)ですので、家庭内のDNSは一旦全てSynologyで受けてから、リバースプロキシでサービスに飛ばすようにすると良いです。
 
 家庭内LANを構築しているとIP直打ちでサービスにアクセスすることが多いです。しかし、サービスが多くなってくるとIPアドレス直打ちは面倒なので、名前でアクセスしたくなります。そこで今回はDNSを使って名前からIPアドレスを解決できるようにする環境を構築します。
 

@@ -2,11 +2,10 @@ https://qiita.com/kijuky/items/465dca1775c511c226f5
 
 ---
 
-:::note alert
-この記事はポエムです。実際にロック実装を行う場合は LockService を使ってください。
-
-https://qiita.com/kyamadahoge/items/f5d3fafb2eea97af42fe
-:::
+> **Note:**  
+> この記事はポエムです。実際にロック実装を行う場合は LockService を使ってください。
+>
+> https://qiita.com/kyamadahoge/items/f5d3fafb2eea97af42fe
 
 
 Google Apps Script（GAS）を用いてWeb APIと連携する際、通常はアクセストークンを利用して通信が行われます。一部のAPIではアクセストークンの有効期限が設定されており、新しいアクセストークンを取得する必要があります。アクセストークンを都度取得することも可能ですが、既に取得済みのトークンを再利用することで余分なリクエストを抑えることができ、経済的です。これにより、異なるスレッドで同じトークンを共有することが求められます。GASではPropertiesを利用することで、簡単に共有リソースが実現できます。

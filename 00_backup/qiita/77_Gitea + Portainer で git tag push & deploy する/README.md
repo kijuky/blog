@@ -25,9 +25,8 @@ Portainerはdockerデーモンをリモートで監視できるSaaSです。REST
 
 GiteaにはRunner機能が内包されているので、それを使います。ホストのcompose.yamlに一緒に入れて良いです。ただし、ホスト側の起動前にRunnerが起動してしまうとRunnerが落ちてしまうので、ホストが起動するまで待ちます。
 
-:::note warn
-私の環境だけかもしれませんが、Runnerは起動し続けているといつの間にか接続が切れてしまっていることがあります。そういう時はRunnerを再起動します。
-:::
+> **Note:**  
+> 私の環境だけかもしれませんが、Runnerは起動し続けているといつの間にか接続が切れてしまっていることがあります。そういう時はRunnerを再起動します。
 
 ```compose.yaml
 services:
@@ -92,9 +91,8 @@ services:
 
 Giteaリポジトリに関連づけたStackを作成します。このタイミングでデプロイ可能なものを用意しておく必要があります。
 
-:::note warn
-ボリュームマウントのパスに `.` や `~` などを使うことができません。Portainerのホストの絶対パスを記述する必要があります。compose.yaml上では`{$VOLUME_ROOT:-.}`みたいにして、下記環境変数で `VOLUME_ROOT` に絶対パスを記述しましょう。
-:::
+> **Note:**  
+> ボリュームマウントのパスに `.` や `~` などを使うことができません。Portainerのホストの絶対パスを記述する必要があります。compose.yaml上では`{$VOLUME_ROOT:-.}`みたいにして、下記環境変数で `VOLUME_ROOT` に絶対パスを記述しましょう。
 
 ![image.png](./img/03.png)
 
@@ -108,9 +106,8 @@ Gitea Actions は GitHub Actions のローカル版である[act](https://github
 
 リポジトリに下記のyamlを用意します。
 
-:::note warn
-Stackを作った時に設定した環境変数を再び設定する必要があります。
-:::
+> **Note:**  
+> Stackを作った時に設定した環境変数を再び設定する必要があります。
 
 ```.gitea/workflows/deploy.yml
 name: Redeploy Portainer Stack
