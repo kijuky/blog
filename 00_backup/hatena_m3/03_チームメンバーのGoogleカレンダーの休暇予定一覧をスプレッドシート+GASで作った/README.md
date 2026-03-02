@@ -18,7 +18,8 @@ https://www.m3tech.blog/entry/2022/12/29/180000
 
 今回はこちらのスプレッドシートを参照してもらうことにします。実際に使う場合はこのスプレッドシートをコピーして使います。コピーすると、紐づくGASも一緒にコピーされます。
 
-<figure class="figure-image figure-image-fotolife" title="実際に運用している休暇予定シート">[f:id:m3tech:20221229180007p:plain]<figcaption>実際に運用している休暇予定シート</figcaption></figure>
+![01.png](./img/01.png)  
+実際に運用している休暇予定シート
 
 [https://docs.google.com/spreadsheets/d/1Mjvm0KGu8vbMHDRGUtrsVhhAl9CrPWGpSnL1mb7fi-o/edit#gid=0:title]
 
@@ -180,12 +181,13 @@ function toLightEvent_(event) {
 
 `scheduledInsertCalendarColumnsAndUpdateHoliday` を定期実行するようにトリガーを設定します。
 
-<figure class="figure-image figure-image-fotolife" title="トリガーの設定">[f:id:m3tech:20221229180014p:plain]<figcaption>トリガーの設定</figcaption></figure>
-
+![02.png](./img/02.png)  
+トリガーの設定
 
 各ユーザーはカレンダーで、休暇予定を「不在」で設定します。
 
-<figure class="figure-image figure-image-fotolife" title="「不在」予定の作成">[f:id:m3tech:20221229180010p:plain]<figcaption>「不在」予定の作成</figcaption></figure>
+![03.png](./img/03.png)  
+「不在」予定の作成
 
 すると、定期実行のタイミングでカレンダーの情報がスプレッドシートに反映されます。
 

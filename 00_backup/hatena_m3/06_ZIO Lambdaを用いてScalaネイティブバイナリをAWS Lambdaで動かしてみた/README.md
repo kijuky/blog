@@ -4,7 +4,8 @@ https://www.m3tech.blog/entry/2024/07/26/100000
 
 こんにちは。エムスリーエンジニアリンググループでScalaとマミさんが好きな安江です。今回は私が所属している[デジカルチーム](https://speakerdeck.com/m3_engineering/m3-digikar-engineering-team)のお話です。ZIO Lambdaを使ってScalaネイティブバイナリをAWS Lambdaで動かしてみました。こちらの技術スタックの紹介をします。
 
-<figure class="figure-image figure-image-fotolife" title="ZIO Lambda">[f:id:m3tech:20240726100021p:plain]<figcaption>ZIO Lambda</figcaption></figure>
+![01.png](./img/01.png)  
+ZIO Lambda
 
 ## 背景
 
@@ -194,7 +195,8 @@ native-image \
 
 AWS Lambda用のコンテナーリポジトリをAmazon ECRに作成します。
 
-<figure class="figure-image figure-image-fotolife" title="リポジトリの作成">[f:id:m3tech:20240726100012p:plain]<figcaption>リポジトリの作成</figcaption></figure>
+![02.png](./img/02.png)  
+リポジトリの作成
 
 リポジトリにイメージをプッシュします。
 
@@ -206,13 +208,14 @@ AWS_ACCOUNT=xxxxxxxxxxxx sbt publish
 
 AWSコンソールでLambdaを新規作成します。自動で実行ロールとCloudWatchロググループを作成してくれます。作成画面では「コンテナイメージ」を選択します。とくにこだわりがなければ、[料金](https://aws.amazon.com/jp/lambda/pricing/)の安いArmでビルドすることをオススメします。今回紹介したマルチステージビルドでは、[Docker Buildx](https://matsuand.github.io/docs.docker.jp.onthefly/buildx/working-with-buildx/)を使ってArmでビルドしています。
 
-<figure class="figure-image figure-image-fotolife" title="Lambdaの作成">[f:id:m3tech:20240726100015p:plain]<figcaption>Lambdaの作成</figcaption></figure>
+![03.png](./img/03.png)  
+Lambdaの作成
 
 テストタブからテスト実行できます。コールドスタートだと3〜5秒くらいかかっています。ホットスタートだと数ミリ秒で処理ができています。
 
-| <figure class="figure-image figure-image-fotolife" title="コールドスタート">[f:id:m3tech:20240726100018p:plain]</figure> | <figure class="figure-image figure-image-fotolife" title="ホットスタート">[f:id:m3tech:20240726100010p:plain]</figure> |
-| :---: | :---: |
-| コールドスタート | ホットスタート | 
+| ![04.png](./img/04.png) | ![05.png](./img/05.png) |
+|:-----------------------:|:-----------------------:|
+|        コールドスタート         |         ホットスタート         | 
 
 AWS Lambdaを更新する時は、build.sbt内のコメントを外して`sbt publish`を実行します。
 

@@ -40,7 +40,7 @@ libraryDependencies += "com.m3" %% "m3util" % "1.0.2"
 
 この状態で IntelliJ を開くと sbt が依存しているライブラリが見れます（通常と違って jar ファイル名でソートされてるので探しづらいですが...）。型である程度想像できますが、Java にデコンパイルすれば気合い :muscle:  で読めます。
 
-![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59468/e123d54b-37de-48dd-6702-b134a0e13048.png)
+![image.png](./img/01.png)
 
 文字列型から Option[Int] にしてますね。 parseInt の結果を Try ではなく Option で扱うためのライブラリでしょうか。さくっと build.sbt で動作確認してみましょう。
 

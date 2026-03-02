@@ -12,7 +12,11 @@ https://kijuky.hatenablog.com/entry/2021/06/08/185423
 
 まずは Developer ツールでセレクタとプロパティを調べつつ、動くコードを書きます。
 
+![01.png](./img/01.png)
+
+```
 document.getElementById("body").style.fontFamily="Courier New"
+```
 
 https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Properties_Reference
 

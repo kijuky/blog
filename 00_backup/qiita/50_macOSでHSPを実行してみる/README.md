@@ -13,7 +13,7 @@ brew install xquarts
 startx
 ```
 
-| ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59468/0b9c742b-e91b-ef11-cb6e-a3ce11a5f280.png) | ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59468/1b669164-566d-0d8e-4f04-b64e10c7b08b.png) |
+| ![image.png](./img/01.png) | ![image.png](./img/02.png) |
 |:-:|:-:|
 | **XQuartz が立ち上がったのを確認** | **設定から「ネットワーク・クライアントからの接続を許可」をチェック** |
 
@@ -107,13 +107,13 @@ docker run --rm -it -v "$(pwd):/root" -w /root -e DISPLAY=host.docker.internal:0
 xhost -
 ```
 
-| ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59468/ffd812a5-bd65-f7e6-77ab-e97d2d9b8951.png) |
+| ![image.png](./img/03.png) |
 |:-:|
 | **エディタが開いた様子** |
 
 ゲームも開いてみましょう（エディタの日本語が化けてますね...）
 
-| ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59468/43656575-06e7-6029-e611-14878625e30f.png) |
+| ![image.png](./img/04.png) |
 |:-:|
 | **block3.hspを実行した様子** |
 

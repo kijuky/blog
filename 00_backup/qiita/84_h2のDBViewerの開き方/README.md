@@ -14,7 +14,7 @@ scala-cli h2.sc
 
 ブラウザが開き、h2のDBViewerが開く
 
-![スクリーンショット 2025-11-05 15.56.08.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/59468/6eb8e3b3-cdc4-4b05-a80d-4afb596e2333.png)
+![スクリーンショット 2025-11-05 15.56.08.png](./img/01.png)
 
 # 参考文献
 

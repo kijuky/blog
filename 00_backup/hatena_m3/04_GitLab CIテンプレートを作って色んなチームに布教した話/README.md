@@ -8,13 +8,15 @@ https://www.m3tech.blog/entry/2023/01/01/120000
 
 # 1. レビュー依頼ジョブ
 
-<figure class="figure-image figure-image-fotolife" title="レビュー依頼ジョブ">[f:id:m3tech:20230101120004p:plain]<figcaption>レビュー依頼ジョブ</figcaption></figure>
+![01.png](./img/01.png)  
+レビュー依頼ジョブ
 
 [こちらの記事](https://www.m3tech.blog/entry/2022/03/29/110206)(([以前の記事](https://www.m3tech.blog/entry/2022/03/29/110206)では各リポジトリにて個別にレビュー依頼ジョブを作成していましたが、nodeによる実装をGitLab CIテンプレートで配布する形に変更されました。これにより、展開の速度が加速しました。))でも紹介しましたが、レビューの依頼は単にマージリクエストを作成して終わり、というのは滅多にありません。対応する課題を作ったり、slackに依頼したりと、チームによってさまざまです。複雑な手順は、普段から開発しているメンバーにとっても煩わしいですし、チーム外からコントリビュートしたいメンバーにとってはとてもハードルが高いものになります。こちらのテンプレはGitLab CIジョブにレビュー依頼を作成します。これによって、レビュー依頼はこちらのジョブを手動実行する、というインタフェースに統一され、気軽にレビュー依頼できるようになりました。やったね！
 
 # 2. 古いブランチの通知
 
-<figure class="figure-image figure-image-fotolife" title="古いブランチの通知">[f:id:m3tech:20230101120007p:plain]<figcaption>古いブランチの通知</figcaption></figure>
+![02.png](./img/02.png)  
+古いブランチの通知
 
 皆さんが管理するリポジトリに古いブランチはありませんか？必要以上に残ってしまったトピックブランチの対処、問題になっていたりしませんか？こちらのジョブは3か月動きがなかったブランチ((GitLabでは、3か月以上動きがなかったブランチは「古いブランチ」として表示されるため、それに倣いました。個人的には1か月くらいで通知しても良いかな、と感じています。))の最新コミッターに対してslackに通知します。GitLabの場合、ブランチが削除されると、それに紐づくマージリクエストや環境も破棄されるため、通知のトリガーはブランチだけで良いのです。
 
@@ -22,7 +24,8 @@ https://www.m3tech.blog/entry/2023/01/01/120000
 
 # 3. renovate, scala stewardのテンプレート
 
-<figure class="figure-image figure-image-fotolife" title="renovateによって作成されたマージリクエスト">[f:id:m3tech:20230101120010p:plain]<figcaption>renovateによって作成されたマージリクエスト</figcaption></figure>
+![03.png](./img/03.png)  
+renovateによって作成されたマージリクエスト
 
 サービスが依存しているライブラリの更新管理、大変ですよね。もはや一般的になった[renovate](https://docs.renovatebot.com/)や[scala steward](https://github.com/scala-steward-org/scala-steward#readme)の導入を手軽にするテンプレートを用意しました。特にrenovateのテンプレートは、私が所属するチーム以外でも採用されました。需要の高さが伺えますね。是非、読者の皆さんにも使ってもらいたいので、ここに弊社で使っている実例を置いておきますね。
 
@@ -102,7 +105,8 @@ renovate_scheduled:
 
 `renovate_manual`はtestステージに出現する手動ジョブで、デバッグ用です。`renovate_scheduled`をスケジュール登録することで、developブランチのライブラリの更新を監視できるようになります。他のスケジュールジョブと干渉を防ぐために`renovate`変数が定義されている場合のみ、実行されるようになっています。
 
-<figure class="figure-image figure-image-fotolife" title="スケジュール登録の例">[f:id:m3tech:20230101120014p:plain]<figcaption>スケジュール登録の例</figcaption></figure>
+![04.png](./img/04.png)  
+スケジュール登録の例
 
 # We're hiring !!!
 
