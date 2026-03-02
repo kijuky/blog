@@ -4,60 +4,54 @@ https://qiita.com/kijuky/items/2b92c19bdaaec93c2980
 
 Playのコンパイル時DIで用意するBuiltInComponetnsのクラス階層について整理します。
 
-```plantuml
-
-  package play { 
-    BuiltInComponents <|-- BuiltInComponentsFromContext
-
-    interface BuiltInComponents {
-      +Application application()
-      +ApplicationLifecycle {abstract} applicationLifecycle()
-      +Configuration {abstract} configuration()
-      +Environment {abstract} environment()
-    }
-
-    abstract class BuiltInComponentsFromContext {
-      -Context context
-      +ApplicationLifecycle applicationLifecycle()
-      +Configuration configuration()
-      +Environment environment()
-    }
+```mermaid
+classDiagram
+  class BuiltInComponents {
+    <<interface>>
+    +Application application()
+    +ApplicationLifecycle applicationLifecycle()
+    +Configuration configuration()
+    +Environment environment()
   }
 
-  circle entrypoint
-
-  package app {
-    BuiltInComponents <|.. ApplicationComponents
-    ApplicationComponents <|.. ApplicationComponentsFromContext
-    BuiltInComponentsFromContext <|-- ApplicationComponentsFromContext
-    MyApplicationLoader *.. ApplicationComponentsFromContext
-    entrypoint --> MyApplicationLoader
-
-    class MyApplicationLoader {
-      +Application load(Context)
-    }
-
-
-    interface ApplicationComponents {
-    }
-
-    class ApplicationComponentsFromContext {
-    }
+  class BuiltInComponentsFromContext {
+    <<abstract>>
+    -Context context
+    +ApplicationLifecycle applicationLifecycle()
+    +Configuration configuration()
+    +Environment environment()
   }
 
-  package test {
-    BuiltInComponentsFromContext <|-- FakeApplicationComponents
-    ApplicationComponents <|.. FakeApplicationComponents
-
-    class FakeApplicationComponents {
-    }
+  class MyApplicationLoader {
+    +Application load(Context)
   }
 
-  ApplicationComponentsFromContext --|> MemcachedComponents
-  interface MemcachedComponents {}
+  class ApplicationComponents {
+    <<interface>>
+  }
 
-  FakeApplicationComponents --|> CaffeineCacheComponents
-  interface CaffeineCacheComponents {}
+  class ApplicationComponentsFromContext
+  class FakeApplicationComponents
+  class MemcachedComponents {
+    <<interface>>
+  }
+  class CaffeineCacheComponents {
+    <<interface>>
+  }
+  class entrypoint
+
+  BuiltInComponents <|-- BuiltInComponentsFromContext
+  BuiltInComponents <|.. ApplicationComponents
+  ApplicationComponents <|.. ApplicationComponentsFromContext
+  BuiltInComponentsFromContext <|-- ApplicationComponentsFromContext
+  MyApplicationLoader ..> ApplicationComponentsFromContext
+  entrypoint --> MyApplicationLoader
+
+  BuiltInComponentsFromContext <|-- FakeApplicationComponents
+  ApplicationComponents <|.. FakeApplicationComponents
+
+  MemcachedComponents <|.. ApplicationComponentsFromContext
+  CaffeineCacheComponents <|.. FakeApplicationComponents
 ```
 
 # 基礎

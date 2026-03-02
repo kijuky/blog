@@ -59,16 +59,16 @@ https://github.com/kijuky/gas-jquantsapi
 
 ## トークンについて
 
-```plantuml
-@startuml
+```mermaid
+sequenceDiagram
+  participant gas
+  participant jq as j-quants
 
-gas -> gas: プロパティにIDトークンがない
-gas -> gas: プロパティにリフレッシュトークンもない
-gas -> "j-quants": リフレッシュトークンを取得
-gas -> "j-quants": IDトークンを取得
-gas -> "j-quants": IDトークンを使ってAPI呼び出し
-
-@enduml
+  gas->>gas: プロパティにIDトークンがない
+  gas->>gas: プロパティにリフレッシュトークンもない
+  gas->>jq: リフレッシュトークンを取得
+  gas->>jq: IDトークンを取得
+  gas->>jq: IDトークンを使ってAPI呼び出し
 ```
 
 トークンはスクリプトプロパティに保存するようにしました。スクリプトプロパティに必要なトークンがなければ遡ってトークンを取得しに行きます。取得したトークンはスクリプトプロパティに保存するため、2回目以降の呼び出しはちょっと速くなります。ただし、トークンの期限が切れると、同様に遡ってトークンを取得しに行きます。
@@ -106,4 +106,3 @@ function listed_info(code, date = new Date(new Date().setDate(new Date().getDate
 # まとめ
 
 J-Quants APIをGoogleスプレッドシートで使う方法を紹介しました。GASの関数がそのままGoogleスプレッドシートで使えるので、J-Quants API以外のAPIも繋げて色々な情報をGoogleスプレッドシートで一元管理すると面白いかもしれませんね。
-

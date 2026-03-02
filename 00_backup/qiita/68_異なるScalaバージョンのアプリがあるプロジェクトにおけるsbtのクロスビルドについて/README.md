@@ -8,26 +8,29 @@ sbtは、異なるScalaバージョンであってもクロスビルドの設定
 
 最初にアプリが1つありました。古くから運用されているプロジェクトで、そうですね...とにかく古いScalaを使っていて、仮にバージョンを2.11としましょうか。
 
-```plantuml
-artifact "app@scala2.11\n(root)"
+```mermaid
+flowchart LR
+  app["app@scala2.11<br/>(root)"]
 ```
 
 流石に令和になって5年ほど経ったので、そろそろScalaのバージョンもあげたくなってきました。最近はScalaにもLTSの概念が導入されたので、LTSである3.3のバージョンを作りました。
 
-```plantuml
-artifact "app@scala2.11\n(root)"
-artifact "app2@scala3.3"
+```mermaid
+flowchart LR
+  app["app@scala2.11<br/>(root)"]
+  app2["app2@scala3.3"]
 ```
 
 appは規模がでかいので、一気にapp2にはせずに、少しずつ機能を移していこうと思います。切り出す機能はドメインオブジェクトを使っていたので、appとapp2の両方で使えるように、共通コード置き場を用意しました。ここに、ドメインオブジェクトがどんどん増えていく予定です。
 
-```plantuml
-artifact "app@2.11\n(root)" as p1
-artifact "app2@3.3" as p2
-artifact "domain@2.11\ndomain@3.3" as d
+```mermaid
+flowchart LR
+  p1["app@2.11<br/>(root)"]
+  p2["app2@3.3"]
+  d["domain@2.11<br/>domain@3.3"]
 
-d <-- p1
-d <-- p2
+  p1 --> d
+  p2 --> d
 ```
 
 # 設定ファイル
