@@ -1,0 +1,3 @@
+[submodule "00_archive"]
+	path = 00_archive
+	url = git@github.com:kijuky/blog-archive.git

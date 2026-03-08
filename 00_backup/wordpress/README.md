@@ -1,1 +1,0 @@
-https://kijuky.wordpress.com/
