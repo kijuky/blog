@@ -1,0 +1,78 @@
+#!/usr/bin/env -S scala-cli shebang
+//> using javaOpt --sun-misc-unsafe-memory-access=allow
+//> using scala 3.3
+//> using dep "org.virtuslab::scala-yaml:0.3.1"
+
+import org.virtuslab.yaml.*
+
+import java.nio.file.Files
+import java.nio.file.Paths
+import java.nio.file.StandardOpenOption
+import java.time.OffsetDateTime
+import java.time.format.DateTimeFormatter
+import scala.sys.process.*
+
+final case class Meta(
+  title: Option[String],
+  published_at: Option[String],
+  modified_at: Option[String]
+) derives YamlCodec
+
+val now = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+
+// stagedファイル取得
+val files = "git diff --cached --name-status".!!.split("\n").toList
+
+// README.md 対象抽出
+val targets: List[(String, String)] =
+  for {
+    line <- files
+    parts = line.split("\\s+")
+    if parts.length >= 2
+    Array(status, path, _*) = parts: @unchecked
+    if path.matches(".+/README\\.md")
+  } yield (status, path)
+
+targets.foreach { case (status, readmePath) =>
+  val dir = readmePath.stripSuffix("/README.md")
+  val dirName = dir.split("/").lastOption.getOrElse("")
+
+  dirName.split("_", 2) match {
+    case Array(_, yyyy) =>
+      val metaPath = Paths.get(s"$dir/meta.yaml")
+
+      // YAML読み込み
+      val meta: Option[Meta] =
+        if (Files.exists(metaPath))
+          Files.readString(metaPath).as[Meta].toOption
+        else
+          None
+
+      // 更新ロジック
+      PartialFunction.condOpt(status) {
+        case "A" =>
+          Meta(
+            title = Some(yyyy),
+            published_at = Some(now),
+            modified_at = Some(now)
+          )
+        case "M" =>
+          Meta(
+            title = Some(yyyy),
+            published_at = meta.flatMap(_.published_at).orElse(Some(now)),
+            modified_at = Some(now)
+          )
+        }.foreach { updated =>
+          // 書き出し
+          val yamlStr = updated.asYaml
+          Files.writeString(metaPath, yamlStr)
+
+          // stagingに追加
+          Seq("git", "add", s"$dir/meta.yaml").!
+        }
+    case _ =>
+      ()
+  }
+}
+
+sys.exit(0)
