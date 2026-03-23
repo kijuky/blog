@@ -2,12 +2,13 @@
 //> using javaOpt --sun-misc-unsafe-memory-access=allow
 //> using scala 3.3
 //> using dep "org.virtuslab::scala-yaml:0.3.1"
+//> using dep "commons-io:commons-io:2.21.0"
 
+import org.apache.commons.io.FilenameUtils
 import org.virtuslab.yaml.*
 
 import java.nio.file.Files
 import java.nio.file.Paths
-import java.nio.file.StandardOpenOption
 import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 import scala.sys.process.*
@@ -35,8 +36,8 @@ val targets: Seq[(String, String)] =
   } yield (status, path)
 
 targets.foreach { case (status, readmePath) =>
-  val dir = readmePath.stripSuffix("/README.md")
-  val dirName = dir.split("/").lastOption.getOrElse("")
+  val dir = FilenameUtils.getFullPathNoEndSeparator(readmePath)
+  val dirName = FilenameUtils.getBaseName(dir)
 
   dirName.split("_", 2) match {
     case Array(_, yyyy) =>
