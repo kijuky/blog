@@ -21,16 +21,17 @@ final case class Meta(
 val now = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
 
 // stagedファイル取得
-val files = "git diff --cached --name-status".!!.split("\n").toList
+val bytes = "git diff --cached --name-status -z".!!.getBytes("UTF-8")
+val files: Seq[Seq[String]] =
+  String(bytes, "UTF-8").split("\u0000").map(_.trim).filter(_.nonEmpty).toSeq
+    .grouped(2).toSeq
 
 // README.md 対象抽出
-val targets: List[(String, String)] =
+val targets: Seq[(String, String)] =
   for {
     line <- files
-    parts = line.split("\\s+")
-    if parts.length >= 2
-    Array(status, path, _*) = parts: @unchecked
-    if path.matches(".+/README\\.md")
+    Seq(status, path) = line: @unchecked
+    if path.endsWith("/README.md")
   } yield (status, path)
 
 targets.foreach { case (status, readmePath) =>
